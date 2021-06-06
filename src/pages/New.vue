@@ -19,7 +19,7 @@
 
         <div class="q-my-sm">
           <q-btn color="grey" to="/" type="reset">Cancel</q-btn>
-          <q-btn class="q-ml-sm" color="positive" to="/" type="submit">Create</q-btn>
+          <q-btn class="q-ml-sm" color="positive" type="submit">Create</q-btn>
         </div>
       </form>
     </Container>
@@ -30,11 +30,14 @@
 import Container from "components/Container";
 import {useLocalNotes} from "src/helpers";
 import {reactive} from 'vue'
+import { useRouter } from 'vue-router'
+
 export default {
   name: "New",
   components: { Container },
   setup() {
     const notes = useLocalNotes()
+    const router = useRouter()
 
     const note = reactive({
       title: '',
@@ -50,7 +53,8 @@ export default {
         updatedAt: Date.now()
       })
 
-      this.router.push('/')
+      router.push('/')
+      // this.router.push('/')
 
       // reset the form data
       note.title = ''
