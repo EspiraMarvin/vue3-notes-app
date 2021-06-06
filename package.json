@@ -6,6 +6,14 @@
   "author": "EspiraMarvin <espiramarvin@gmail.com>",
   "private": true,
   "scripts": {
+    "dev": "quasar dev",
+    "build": "quasar build",
+    "add-pwa": "quasar mode add pwa",
+    "build-pwa": "quasar build -m pwa",
+    "add-cordova": "quasar mode add cordova",
+    "build-android": "quasar build -m android",
+    "build-android-ide": "quasar build -m android --ide",
+    "build-electron": "quasar build -m electron",
     "lint": "eslint --ext .js,.vue ./",
     "test": "echo \"No test specified\" && exit 0"
   },
